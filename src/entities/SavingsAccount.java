@@ -25,8 +25,13 @@ public class SavingsAccount extends Account{
 		balance += balance * interestRate;
 	}
 	
+	/*FINAL AJUDA A EVITAR SOBREPOSIÇÕES MULTIPLAS, 
+	 * ALGO QUE PODE GERAR INCONSISTENCIAS 
+	 * TAMBEM GERA MELHOR PERFORMACE EM TEMPO DE 
+	 * EXECUÇÃO*/
+	
 	@Override
-	public void withdraw(double amount) {
+	public final void withdraw(double amount) {
 		balance -= amount;
 	}
 	
